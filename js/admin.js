@@ -19,6 +19,9 @@
     inboxView.hidden = true;
     signoutBtn.hidden = true;
     loginForm.reset();
+    // don't leave message content in the DOM after sign-out
+    msgList.querySelectorAll(".msg-card").forEach((el) => el.remove());
+    inboxCount.textContent = "";
   }
 
   async function showInbox() {
@@ -75,12 +78,15 @@
 
     if (error) {
       msgEmpty.hidden = false;
-      msgEmpty.textContent = "// couldn't load messages — " + error.message;
+      msgEmpty.classList.add("is-error");
+      msgEmpty.textContent = "// couldn't load messages — " + (error.message || "unknown error") + " (try refresh)";
+      inboxCount.textContent = "";
       return;
     }
 
     inboxCount.textContent = `${data.length} message${data.length === 1 ? "" : "s"} · ${data.filter((m) => !m.read).length} unread`;
     msgEmpty.hidden = data.length > 0;
+    msgEmpty.classList.remove("is-error");
     msgEmpty.textContent = "// no messages yet — the form is out there working";
 
     data.forEach((m) => msgList.appendChild(renderCard(m)));

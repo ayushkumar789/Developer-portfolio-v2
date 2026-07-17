@@ -43,6 +43,10 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* the hidden attribute must always win, even over display:grid/flex on the
+   same element (author styles otherwise override the UA's [hidden] rule) */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
@@ -238,7 +242,6 @@ body.has-cursor #cursor-dot, body.has-cursor #cursor-ring { opacity: 1; }
 #nav-burger[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
 #nav-burger[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
 
-#mobile-menu[hidden] { display: none; }
 #mobile-menu {
   position: fixed;
   inset: 0;
@@ -1007,7 +1010,6 @@ li.cert-thumb:hover .thumb-media img { transform: scale(1.05); }
   line-height: 1.35;
 }
 
-#lightbox[hidden] { display: none; }
 #lightbox {
   position: fixed;
   inset: 0;
@@ -1231,6 +1233,7 @@ li.cert-thumb:hover .thumb-media img { transform: scale(1.05); }
 
 .msg-list { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 5rem; }
 .msg-empty { color: var(--muted); font-size: var(--fs-small); }
+.msg-empty.is-error { color: #FF7B72; }
 .msg-card {
   position: relative;
   background: rgba(12, 19, 34, 0.6);
