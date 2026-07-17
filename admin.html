@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>AKP — Inbox</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>⌬</text></svg>" />
+</head>
+<body class="admin-page">
+
+  <canvas id="bg-net" aria-hidden="true"></canvas>
+  <div id="bg-glow" aria-hidden="true"></div>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"><span id="cursor-label"></span></div>
+
+  <header id="site-nav">
+    <a class="nav-logo" href="index.html" data-hover>
+      <span class="logo-bracket">&lt;</span>AKP<span class="logo-bracket">/&gt;</span>
+    </a>
+    <span class="admin-badge mono">// admin</span>
+    <button id="signout-btn" class="nav-cta mono" data-hover hidden>Sign out</button>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- ============ login gate — always shown first without a valid session ============ -->
+    <section id="login-view" class="auth-wrap" hidden>
+      <form id="login-form" class="auth-card">
+        <p class="auth-kicker mono"><span class="prompt">~/admin&nbsp;$</span> sudo login</p>
+        <h1>Admin access</h1>
+        <p class="auth-sub">One account. Real auth. Row-level security does the rest.</p>
+        <label>
+          <span class="mono">email</span>
+          <input type="email" name="email" required autocomplete="username" data-hover />
+        </label>
+        <label>
+          <span class="mono">password</span>
+          <input type="password" name="password" required autocomplete="current-password" data-hover />
+        </label>
+        <button class="btn btn-primary" type="submit" data-hover>
+          <span class="btn-label">Sign In</span> <span class="btn-ic" aria-hidden="true">→</span>
+        </button>
+        <p class="form-status mono" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- ============ inbox ============ -->
+    <section id="inbox-view" class="section" hidden>
+      <div class="section-head">
+        <span class="section-index mono">✉</span>
+        <h2>Inbox</h2>
+        <span class="inbox-count mono"></span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <button id="refresh-btn" class="mono link-btn" data-hover>refresh ⟳</button>
+      </div>
+      <div id="msg-list" class="msg-list">
+        <p class="msg-empty mono" hidden>// no messages yet — the form is out there working</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supa.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

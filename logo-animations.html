@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Animations — Ayush Kumar Panigrahi</title>
+  <meta name="description" content="Animated logo work by Ayush Kumar Panigrahi." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>⌬</text></svg>" />
+</head>
+<body class="gallery-page" data-folder="logo-animations">
+
+  <canvas id="bg-net" aria-hidden="true"></canvas>
+  <div id="bg-glow" aria-hidden="true"></div>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"><span id="cursor-label"></span></div>
+
+  <header id="site-nav">
+    <a class="nav-logo" href="index.html" data-hover>
+      <span class="logo-bracket">&lt;</span>AKP<span class="logo-bracket">/&gt;</span>
+    </a>
+    <a class="back-link mono" href="index.html#projects" data-hover>← back to portfolio</a>
+  </header>
+
+  <main class="gallery-main">
+    <div class="section-head">
+      <span class="section-index mono">▶</span>
+      <h1>Logo Animations</h1>
+      <span class="gallery-count mono"></span>
+      <span class="section-rule" aria-hidden="true"></span>
+    </div>
+    <p class="gallery-sub">Motion identities — hover to preview, click to play full-size.</p>
+
+    <p class="gallery-status mono">// loading…</p>
+    <div id="gallery-grid" class="gallery-grid"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supa.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
