@@ -389,6 +389,7 @@ body.has-cursor #cursor-dot, body.has-cursor #cursor-ring { opacity: 1; }
   align-items: center;
   gap: 0.5rem;
 }
+.hero-meta + .hero-meta { margin-top: 0.55rem; }
 .dot-live {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -819,6 +820,19 @@ body.has-cursor #cursor-dot, body.has-cursor #cursor-ring { opacity: 1; }
 }
 
 .proj-card h3 { font-size: var(--fs-h3); margin-bottom: 0.55rem; }
+.dev-pill {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  padding: 0.16rem 0.6rem;
+}
 .proj-card > p { color: var(--muted); font-size: var(--fs-small); min-height: 3.6em; }
 
 .tech-tags {
@@ -905,6 +919,25 @@ body.has-cursor #cursor-dot, body.has-cursor #cursor-ring { opacity: 1; }
 .arch-static:hover::before { transform: scaleY(0); }
 
 .links-pending { color: rgba(147, 160, 184, 0.55); font-size: var(--fs-tiny); letter-spacing: 0.04em; }
+
+/* --- agency work: one compact card, sized like an archive tile --- */
+.agency-block { margin-top: 3rem; }
+.agency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.agency-card { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+.agency-head { display: flex; align-items: center; gap: 0.7rem; }
+.agency-card .tech-tags { margin: 0; }
+.agency-card .tech-tags span {
+  font-size: var(--fs-tiny);
+  color: var(--cyan);
+  background: rgba(83, 200, 255, 0.07);
+  border: 1px solid rgba(83, 200, 255, 0.22);
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+}
 
 /* ==========================================================================
    CONTACT
@@ -1307,14 +1340,14 @@ body.anim-ready [data-reveal] { opacity: 0; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; gap: 1.8rem; }
   .flagship-grid { grid-template-columns: 1fr; }
-  .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .archive-grid, .agency-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .edu-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
   #site-nav nav, .nav-cta { display: none; }
   #nav-burger { display: flex; }
-  .archive-grid { grid-template-columns: 1fr; }
+  .archive-grid, .agency-grid { grid-template-columns: 1fr; }
   .scroll-hint { display: none; }
   .hero-idcard { width: 132px; bottom: 0; }
 }

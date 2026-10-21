@@ -34,12 +34,12 @@ Type: **Space Grotesk** (display) + **JetBrains Mono** (labels/code).
 
 - [ ] `assets/ayush-hero.jpg` — the one real photo (hero ID card; a styled placeholder shows until it exists)
 - [ ] `assets/Ayush_Kumar_Panigrahi_Resume.pdf` — resume for the two Download buttons
-- [ ] RideVault + DevSync repo/live links (buttons hidden until provided — search `TODO` in `index.html`)
-- [ ] AetherAI IEEE paper link (DOI/proceedings URL — `TODO` comment in the card)
 - [ ] Contact: phone number and LinkedIn URL (search `TODO` in `index.html`)
 - [ ] Education: exact school + junior college names/years (marked `[port … from current site]`)
 - [ ] Create the single admin auth user (see Supabase section above)
 - [ ] Upload certificate files to `portfolio-media/certs/{issuer}/`
+
+DevSync and RideVault show a repo button only, with no live link, because both are still in development (marked with the "In development" pill on their cards).
 
 ## Structure
 
